@@ -13,15 +13,23 @@ export type Character = {
   series?: SeriesList;
 };
 
-type Url = {
+export type Url = {
   type?: string;
   url?: string;
 };
 
-type Image = {
+export type Image = {
   path?: string;
   extension?: string;
 };
+
+export type ImageVariants =
+  | "portrait_small"
+  | "portrait_medium"
+  | "portrait_xlarge"
+  | "portrait_fantastic"
+  | "portrait_uncanny"
+  | "portrait_incredible";
 
 type ComicList = {
   available?: number;
