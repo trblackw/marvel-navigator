@@ -10,12 +10,9 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     .createHash("md5")
     .update(timestamp + privateApiKey + publicApiKey)
     .digest("hex");
-  const auth = `?ts=${timestamp}&apikey=${publicApiKey}&hash=${hash}`;
+  const auth = `ts=${timestamp}&apikey=${publicApiKey}&hash=${hash}`;
   const response = await fetch(
-    `${baseUrl}/characters${!!name ? `?name=${name}${auth}` : auth}`,
-    {
-      mode: "cors"
-    }
+    `${baseUrl}/characters${!!name ? `?name=${name}&${auth}` : `?${auth}`}`
   );
   res.json(await response.json());
 };
