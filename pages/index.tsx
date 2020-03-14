@@ -52,17 +52,17 @@ const Index: NextPage<Props> = ({ characters = [] }) => {
             key={character.id}
           >
             <CharacterLink id={character.id}>
-              <>
+              <a className="text-center">
                 <img
                   src={renderImage({
                     image: character.thumbnail,
-                    variant: "portrait_fantastic"
+                    variant: "standard_fantastic"
                   })}
                   alt={character.name + "'s thumbnail"}
                   className="thumbnail thumbnail-hover-border mb-2"
                 />
-                <a className="text-md cursor-pointer">{character.name}</a>
-              </>
+                <span className="text-md cursor-pointer">{character.name}</span>
+              </a>
             </CharacterLink>
           </div>
         ))}

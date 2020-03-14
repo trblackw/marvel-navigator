@@ -1,14 +1,14 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import Link from "next/link";
 
 interface Props {
   id: number;
-  title: string;
+  children: ReactNode;
 }
 
-const CharacterLink: React.FC<Props> = ({ id, title }) => (
-  <Link href="/characters/[id]" as={`/post/${id}`}>
-    <a className="text-purple-600 font-bold cursor-pointer">{title}</a>
+const CharacterLink: React.FC<Props> = ({ id, children }) => (
+  <Link href="/characters/[id]" as={`/characters/${id}`}>
+    {children}
   </Link>
 );
 
