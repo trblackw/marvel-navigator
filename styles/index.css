@@ -2,6 +2,13 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+@font-face {
+  font-family: 'Marvel-Regular';
+  src: url('/fonts/MarvelRegular-Dj83.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
 html {
   background: linear-gradient(
       216deg,
@@ -89,6 +96,13 @@ html {
   width: 200px;
 }
 
+@media (max-width: 768px) {
+    .thumbnail {
+      height: 120px;
+      width: 120px;
+    }
+}
+
 .thumbnail-hover-border:hover {
   border: 2px solid #FE2540;
   cursor: pointer;
@@ -103,4 +117,12 @@ html {
   padding: 1rem;
   align-content: space-around;
   justify-content: space-between;
+}
+
+.marvel-font {
+  font-family: 'Marvel-Regular', serif;
+}
+
+.landscape {
+  height: 400px;
 }
