@@ -40,9 +40,9 @@ const Index: NextPage<Props> = ({ characters = [] }) => {
         </button>
       </div>
       {searchFired && (
-        <h1 className="font-bold mt-5 text-2xl text-left">
+        <h1 className="mt-5 text-2xl text-left">
           Showing results for{" "}
-          <span className="text-blue-500 font-bold">{search}</span>
+          <span className="text-red-600 font-bold">"{search}"</span>
         </h1>
       )}
       <div className="auto-grid mt-5 custom-black-bg rounded-md mx-auto">
