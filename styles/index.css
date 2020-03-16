@@ -3,8 +3,8 @@
 @import "tailwindcss/utilities";
 
 @font-face {
-  font-family: 'Marvel-Regular';
-  src: url('/fonts/MarvelRegular-Dj83.ttf');
+  font-family: "Marvel-Regular";
+  src: url("/fonts/MarvelRegular-Dj83.ttf");
   font-weight: normal;
   font-style: normal;
 }
@@ -65,6 +65,106 @@ html {
   font-size: 16px;
 }
 
+/* NAVIGATION */
+
+.logo {
+  height: 80px;
+}
+
+@media screen and (min-width: 320px) {
+  .logo {
+    height: 50px;
+  }
+}
+
+.desktop-nav {
+  display: none;
+}
+
+@media screen and (min-width: 501px) {
+  .desktop-nav {
+    display: block;
+  }
+}
+
+.mobile-nav {
+  display: none;
+}
+
+@media screen and (max-width: 500px) {
+  .mobile-nav {
+    display: block;
+  }
+}
+
+.mobile-nav-content {
+  padding: 6px 0;
+  margin: 5px 0;
+}
+
+.mobile-nav-content hr {
+  border: 1px solid #D82A2B;
+  width: 70%;
+  margin: 10px 0;
+}
+
+.mobile-nav-container {
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  position: absolute;
+  padding: 1.5rem;
+  box-shadow: 0 4px 2px -2px black;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.mobile-nav-container span {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  cursor: pointer;
+}
+
+@keyframes swipeDown {
+  from {
+    transform: translate3d(0, -100vh, 0);
+    opacity: 0;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+.swipe-down {
+  animation-timing-function: ease-in-out;
+  transform-origin: bottom center;
+  animation-name: swipeDown;
+  animation-duration: 300ms;
+}
+
+@keyframes swipeUp {
+  from {
+    transform: translate3d(0, 100vh, 0);
+    opacity: 0;
+  }
+
+  to {
+    transform: translate3d(0, 0vh, 0);
+    opacity: 1;
+  }
+}
+
+.swipe-up {
+  animation-timing-function: linear;
+  transform-origin: bottom center;
+  animation-name: swipeUp;
+  animation-duration: 400ms;
+}
+
 @media screen and (min-width: 320px) {
   html {
     font-size: calc(16px + 6 * ((100vw - 320px) / 680));
@@ -97,14 +197,21 @@ html {
 }
 
 @media (max-width: 768px) {
-    .thumbnail {
-      height: 120px;
-      width: 120px;
-    }
+  .thumbnail {
+    height: 120px;
+    width: 120px;
+  }
+}
+
+@media (max-width: 500px) {
+  .thumbnail {
+    height: 80px;
+    width: 80px;
+  }
 }
 
 .thumbnail-hover-border:hover {
-  border: 2px solid #FE2540;
+  border: 2px solid #fe2540;
   cursor: pointer;
   transform: scale(1.1);
   transition-duration: 200ms;
@@ -120,9 +227,30 @@ html {
 }
 
 .marvel-font {
-  font-family: 'Marvel-Regular', serif;
+  font-family: "Marvel-Regular", serif;
 }
 
 .landscape {
   height: 400px;
+}
+
+ul.pipe-separated-link-list {
+  display: block;
+  padding-top: 3px;
+}
+
+ul.pipe-separated-link-list li {
+  list-style-type: none;
+  display: inline;
+}
+
+ul.pipe-separated-link-list li:not(:first-child):before {
+  content: ' | ';
+  color: #CFDBE5;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+ul.pipe-separated-link-list li a:hover, ul.character-detail-list li a:hover {
+  border-bottom: 2px solid #fe2540
 }
