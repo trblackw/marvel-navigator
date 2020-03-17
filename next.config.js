@@ -10,10 +10,6 @@ module.exports = withImages(
       webpack(config) {
         config.plugins.push(new webpack.EnvironmentPlugin(localEnv));
         return config;
-      },
-      env: {
-        PRIVATE_MARVEL_API_KEY: process.env.PRIVATE_MARVEL_API_KEY,
-        PUBLIC_MARVEL_API_KEY: process.env.PUBLIC_MARVEL_API_KEY
       }
     })
   )
