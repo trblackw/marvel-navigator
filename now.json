@@ -1,6 +1,5 @@
 {
   "build": {
-    "name": "Marvel Navigator",
     "env": {
       "PRIVATE_MARVEL_API_KEY": "@private_marvel_api_key",
       "PUBLIC_MARVEL_API_KEY": "@public_marvel_api_key"
